@@ -44,7 +44,7 @@ request('https://charlottesville.craigslist.org/search/cpg?is_paid=all&search_di
 		}
 	}
 );
-
+//
 //fs.writeFile('output.json', allJSONdata, function(err){  
 //    console.log('successfully saved');
 //});
