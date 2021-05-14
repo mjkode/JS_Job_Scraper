@@ -1,4 +1,4 @@
-var cheerio = require('cheerio');
+const cheerio = require('cheerio');
 var request = require('request');
 var fs = require('fs');
 
@@ -7,7 +7,7 @@ var allJSONdata = [];
 function saveData(){
 		
 	fs.writeFile('output.json', JSON.stringify(allJSONdata), function(err){
-		console.log('successfully saved');
+		console.log('saved');
 	}); 
 } 
 
@@ -44,7 +44,7 @@ request('https://charlottesville.craigslist.org/search/cpg?is_paid=all&search_di
 		}
 	}
 );
-//
-//fs.writeFile('output.json', allJSONdata, function(err){  
-//    console.log('successfully saved');
-//});
+
+fs.writeFile('output.json', allJSONdata, function(err){  
+    console.log('successfully saved');
+});
