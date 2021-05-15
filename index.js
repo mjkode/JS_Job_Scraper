@@ -22,14 +22,17 @@ request('https://charlottesville.craigslist.org/search/cpg?is_paid=all&search_di
 
 			allRecords.each(function(index, element){
 				if(index < 100){
+					
 					var title = $(element).find('a.hdrlnk').text();
-					var location = $(element).find('small').text();
+					var hood = $(element).find('span.result-hood').text()
+					var nearby = $(element).find('span.nearby').text();					
+					var hood = hood.concat(nearby)
 					var link = $(element).find('a.hdrlnk').attr('href');
-					console.log(title, location, link);
+					console.log(index, title, hood, link);
 				
 					var tempData = {
 						title: title,
-						location: location,
+						hood: hood,
 						link: link
 					}
 				
